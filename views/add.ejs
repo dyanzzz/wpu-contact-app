@@ -1,0 +1,34 @@
+<div class="row">
+    <div class="col-md-6">
+        <h2>Add Contact</h2>
+
+        <% if (typeof errors != 'undefined') { %>
+            <div class="alert alert-danger" role="alert">
+                <ul>
+                    <% errors.forEach(error => { %>
+                        <li><%= error.msg %> </li>
+                    <% }) %>
+                </ul>
+            </div>              
+        <% } %>
+
+        <form method="POST" action="/contact">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+            </div>
+            <div class="mb-3">
+                <label for="hp" class="form-label">Phone Number</label>
+                <input type="text" name="hp" class="form-control" id="hp" aria-describedby="hpHelp" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Tambah data contact</button>
+            <a href="/contact">&laquo; Back</a>
+        </form>
+
+    </div>
+</div>
